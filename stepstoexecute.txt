@@ -1,0 +1,40 @@
+kubectl apply -f secrets.yml
+kubectl apply -f app.yml
+kubectl apply -f app-service.yml
+kubectl apply -f database.yml
+kubectl apply -f database-service.yml
+
+
+
+
+
+kubectl get deployments 
+kubectl get pods
+
+kubectl exec -it database -- bash
+#mysql -u root -pspringapp
+mysql>show databases;         //confirm if springapp database is created 
+exit 
+
+#mysql -u springapp -pspringapp
+mysql>show databases;               //confirm if springapp database is created 
+exit 
+
+=====================================================================
+
+
+
+Postman:  POST
+a55c29f0dc328426ab83514e6df01157-1109947699.ap-south-1.elb.amazonaws.com:8080/createEmployee
+
+
+Header: Content-Type: application/json
+body: (raw)
+{
+    "id": 1,
+    "name": "IIHT",
+    "desgnation": "Coordinator"
+}
+
+
+
